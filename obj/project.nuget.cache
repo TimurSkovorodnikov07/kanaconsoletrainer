@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "M5MpKsU1ZPCkCCzFyN7N73Yic8oi1gaHuJHxUOX55+7pYsHUyHmKnrw3lXk+2f6F6XqPbNOJkP3oEofiSOuD7A==",
+  "success": true,
+  "projectFilePath": "/home/timur/Desktop/kanaTrainer/kanaTrainer.csproj",
+  "expectedPackageFiles": [
+    "/home/timur/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.8/microsoft.aspnetcore.app.ref.8.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}

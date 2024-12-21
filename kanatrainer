@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd "/home/timur/Desktop/kanaTrainer/"
+dotnet run
