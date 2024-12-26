@@ -12,3 +12,4 @@
 /home/timur/Desktop/kanaTrainer/obj/Debug/net8.0/kanaTrainer.pdb
 /home/timur/Desktop/kanaTrainer/obj/Debug/net8.0/kanaTrainer.genruntimeconfig.cache
 /home/timur/Desktop/kanaTrainer/obj/Debug/net8.0/ref/kanaTrainer.dll
+/home/timur/Desktop/kanaTrainer/obj/Debug/net8.0/kanaTrainer.sourcelink.json
