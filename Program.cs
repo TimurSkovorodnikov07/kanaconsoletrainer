@@ -82,6 +82,7 @@ public static class Program
                     KatakanaDictionary.Add(y.Key, y.Value);
             }
         }
+
         Console.Clear();
 
         _guessMode = args.Contains("-g");
@@ -91,8 +92,9 @@ public static class Program
             var guessModeKeyChar = Console.ReadKey().KeyChar;
             _guessMode = guessModeKeyChar == 'y' || guessModeKeyChar == 'Y';
         }
+
         Console.Clear();
-        
+
         Console.WriteLine("\n");
 
         while (true)
@@ -116,33 +118,37 @@ public static class Program
 
                 Write($"{variantsString}", ConsoleColor.Yellow);
             }
-
             var letter = Console.ReadLine();
+
             if (letter == randomLetter.Value)
             {
                 WriteDashesLine(ConsoleColor.Green);
 
                 WrongAnswers.Remove(randomLetter.Key);
             }
-            else if (letter == "change")
-            {
-                ChooseAlphabet();
-                Console.Clear();
-            }
-            else if (letter == "clear")
-            {
-                Console.Clear();
-            }
             else
-            {
-                var wrongColor = ConsoleColor.Red;
+                switch (letter)
+                {
+                    case "change":
+                        ChooseAlphabet();
+                        Console.Clear();
+                        break;
+                    case "clear":
+                        Console.Clear();
+                        break;
+                    default:
+                    {
+                        var wrongColor = ConsoleColor.Red;
 
-                Write($"{randomLetter.Key}({randomLetter.Value})", wrongColor);
-                WriteDashesLine(wrongColor);
+                        Write($"{randomLetter.Key}({randomLetter.Value})", wrongColor);
+                        WriteDashesLine(wrongColor);
 
-                if (WrongAnswers.ContainsKey(randomLetter.Key) == false)
-                    WrongAnswers.Add(randomLetter.Key, randomLetter.Value);
-            }
+                        if (WrongAnswers.ContainsKey(randomLetter.Key) == false)
+                            WrongAnswers.Add(randomLetter.Key, randomLetter.Value);
+
+                        break;
+                    }
+                }
         }
     }
 
@@ -163,10 +169,12 @@ public static class Program
                     continue;
                 }
             }
+
             result = _currentAlphabet == Alphabet.Hiragana
                 ? HiraganaDictionary.ElementAt(HiraganaDictionary.GetRandomIndex())
                 : KatakanaDictionary.ElementAt(KatakanaDictionary.GetRandomIndex());
         }
+
         return result;
     }
 
